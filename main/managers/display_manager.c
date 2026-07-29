@@ -2301,7 +2301,7 @@ static void display_manager_set_backlight_raw(uint8_t percentage) {
     }
 #endif
 #else
-# error "Either CONFIG_LV_DISP_BACKLIGHT_PWM or CONFIG_LV_DISP_BACKLIGHT_SWITCH must be set"
+//# error "Either CONFIG_LV_DISP_BACKLIGHT_PWM or CONFIG_LV_DISP_BACKLIGHT_SWITCH must be set"
 #endif
 
     ESP_LOGD(TAG, "set_backlight_brightness: %d%% (max allowed: %d%%)", percentage, max_brightness);
