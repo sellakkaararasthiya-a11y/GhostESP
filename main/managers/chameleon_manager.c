@@ -347,7 +347,7 @@ typedef struct {
 
 // Sector authentication tracking (16 sectors for MIFARE Classic 1K)
 #define MAX_SECTORS 16
-static sector_auth_t g_sector_auth[MAX_SECTORS] = {0};
+//static sector_auth_t g_sector_auth[MAX_SECTORS] = {0};
 
 // classic cache for CU path (separate from PN532 internals)
 static struct {
@@ -395,12 +395,13 @@ static bool cu_details_append(char **buf, size_t *cap, size_t *len, const char *
     return true;
 }
 
-static void cu_format_key_hex(const uint8_t *key, char out[13]) {
+/* static void cu_format_key_hex(const uint8_t *key, char out[13]) {
     for (int i = 0; i < 6; ++i) {
         snprintf(out + (i * 2), 3, "%02X", key[i]);
     }
     out[12] = '\0';
 }
+*/
 
 static void cu_mfc_cache_reset(void) {
     g_cu_mfc_cache.valid = false;
