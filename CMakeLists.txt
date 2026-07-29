@@ -1,3 +1,4 @@
+add_compile_options(-w)
 cmake_minimum_required(VERSION 3.16.0)
 
 # Set IDF_TARGET from environment variable if defined
