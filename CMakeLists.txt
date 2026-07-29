@@ -79,3 +79,4 @@ add_compile_definitions(GHOSTESP_BUILD_NUMBER=${GHOSTESP_BUILD_NUMBER})
 # Include project settings
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(Ghost_ESP_IDF)
+add_compile_options(-Wno-error)
