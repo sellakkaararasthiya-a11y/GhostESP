@@ -193,11 +193,11 @@ void set_keyboard_brightness(uint8_t brightness);
 
 
 #ifndef CONFIG_TFT_WIDTH
-#define CONFIG_TFT_WIDTH 240
+#define CONFIG_TFT_WIDTH 128
 #endif
 
 #ifndef CONFIG_TFT_HEIGHT
-#define CONFIG_TFT_HEIGHT 320
+#define CONFIG_TFT_HEIGHT 64
 #endif
 
 #define BACKLIGHT_TIMER LEDC_TIMER_0
@@ -1282,12 +1282,12 @@ void display_manager_add_status_bar(const char *CurrentMenuName) {
         lvgl_obj_del_safe(&old_bar);
     }
     status_bar = lv_obj_create(lv_scr_act());
-  lv_obj_set_size(status_bar, LV_HOR_RES, GUI_STATUS_BAR_H);
+  lv_obj_set_size(status_bar, LV_HOR_RES, 12);
   lv_obj_align(status_bar, LV_ALIGN_TOP_MID, 0, 0);
   lv_obj_set_style_bg_color(status_bar, status_bg_color, LV_PART_MAIN);
   lv_obj_set_scrollbar_mode(status_bar, LV_SCROLLBAR_MODE_OFF);
   lv_obj_set_style_border_side(status_bar, LV_BORDER_SIDE_BOTTOM, LV_PART_MAIN);
-  lv_obj_set_style_border_width(status_bar, 2, LV_PART_MAIN);
+  lv_obj_set_style_border_width(status_bar, 1, LV_PART_MAIN);
   lv_obj_set_style_border_color(status_bar, lv_color_hex(theme_palette_get_accent(theme)), LV_PART_MAIN);
   lv_obj_set_style_border_opa(status_bar, LV_OPA_40, LV_PART_MAIN);
   lv_obj_clear_flag(status_bar, LV_OBJ_FLAG_SCROLLABLE);
@@ -1307,7 +1307,7 @@ void display_manager_add_status_bar(const char *CurrentMenuName) {
 
   lv_obj_t *right_container = lv_obj_create(status_bar);
   lv_obj_remove_style_all(right_container);
-  lv_obj_set_size(right_container, lv_pct(50), GUI_STATUS_BAR_H);
+  lv_obj_set_size(right_container, lv_pct(50), 12);
   lv_obj_set_flex_flow(right_container, LV_FLEX_FLOW_ROW);
   lv_obj_set_flex_align(right_container, LV_FLEX_ALIGN_END, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
   lv_obj_set_style_pad_column(right_container, GUI_GRID, 0);

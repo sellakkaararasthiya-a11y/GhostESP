@@ -134,14 +134,14 @@ menu "Ghost ESP Options"
 
     config STATUS_DISPLAY_SDA_PIN
         int "Status Display SDA Pin"
-        default 6
+        default 21
         depends on WITH_STATUS_DISPLAY
         help
             Set the SDA pin for the status OLED display (shares IO expander bus).
 
     config STATUS_DISPLAY_SCL_PIN
         int "Status Display SCL Pin"
-        default 7
+        default 22
         depends on WITH_STATUS_DISPLAY
         help
             Set the SCL pin for the status OLED display (shares IO expander bus).
